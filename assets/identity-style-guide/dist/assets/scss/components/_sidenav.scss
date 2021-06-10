@@ -1,0 +1,46 @@
+.usa-sidenav {
+  a {
+    padding: units(2);
+
+    &:hover {
+      background-color: color('primary-lightest');
+      color: unset;
+    }
+  }
+
+  .usa-current {
+    color: $theme-color-primary-dark;
+
+    @include add-bar($theme-sidenav-current-border-width, 'secondary', 'left', 0, 0, 0);
+
+    @include at-media('tablet') {
+      @include add-bar($theme-sidenav-current-border-width, 'secondary', 'left', 0, 0, 0);
+    }
+  }
+}
+
+.usa-sidenav--sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: units(2);
+}
+
+.usa-sidenav__sublist a {
+  padding-left: units(4);
+  padding-top: units(1.5);
+  padding-bottom: units(1.5);
+}
+
+.usa-sidenav__sublist .usa-current {
+  @include remove-bar;
+}
+
+.usa-sidenav__sublist .usa-sidenav__item {
+  border-top: 0;
+}
+
+.usa-sidenav .usa-current {
+  &:hover {
+    color: $theme-color-primary-dark;
+  }
+}
